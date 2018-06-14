@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <style>
+        .dancediv{
+            width: 150px;
+            height: 150px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        .danceimg{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="dancediv">
+         <img class="danceimg" src="./images/s.png" alt="" srcset="">
+    </div>
+    <script>
+        $(function(){
+            var i = 0;
+            setInterval(function(){
+                i++;
+                $(".danceimg").attr("src","./images/s"+i+".png");
+                if(i == 2){
+                    i = 0;
+                }
+            },1000);
+        });
+    </script>
+</body>
+</html>
