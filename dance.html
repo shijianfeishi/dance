@@ -9,10 +9,7 @@
     <script src="./js/jquery-2.1.4.min.js"></script>
     <style>
         .dancediv{
-            width: 150px;
-            height: 150px;
-            position: fixed;
-            top: 50%;
+            width: 150px;height: 150px;position: fixed;top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
             text-align: center;
@@ -26,17 +23,34 @@
     <div class="dancediv">
          <img class="danceimg" src="./images/s.png" alt="" srcset="">
     </div>
+    <button onclick="start()">开始</button>
     <script>
+        var arr = [
+            's7','s8','s7','s8','s5','s4',
+            's7','s8a','s5a','d1a','d1a',
+            's7','s8a','s7','s8a','s5a','s4a',
+            's7','s8','s5','d1','d1',
+            's7','s8','s7','s8','s5','s4',
+            's7','s8a','s5a','d1a','d1a',
+            's7','s8a','s7','s8a','s5a','s4a',
+            's7','s8','s5','d1','d1',
+            's8','s9','s10','d2','s8','s9','s8a','s10a','d2a',
+            's8a','s9a','s10','d2a','s8a','s9a','s8','s10a','d2',
+            's8','s9','s10','d2','s8','s9','s8a','s10a','s6',
+            's8a','s9a','s10','d2a','s8a','s9a','s8','s10a','s6a',
+            's7','s6','s5a',
+            's7','s6a','s5','s5a','d1','d1a'
+        ];
         $(function(){
             var i = 0;
             setInterval(function(){
                 i++;
-                $(".danceimg").attr("src","./images/s"+i+".png");
-                if(i == 2){
+                if(i == arr.length){
                     i = 0;
                 }
-            },1000);
-        });
+                $(".danceimg").attr("src","./images/"+arr[i]+".png");
+            },400);
+        })
     </script>
 </body>
 </html>
